@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+git stash --keep-index --include-untracked --message="pre-commit auto-stash"
+
+RESULT=1
+if pnpm run check && pnpm run lint; then
+    RESULT=0
+fi
+
+git restore -s stash .
+git stash drop stash@\{0\}
+
+exit $RESULT
