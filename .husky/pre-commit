@@ -4,7 +4,7 @@
 git stash --keep-index --include-untracked --message="pre-commit auto-stash"
 
 RESULT=1
-if pnpm run check && pnpm run lint; then
+if pnpm run build && pnpm run lint; then
     RESULT=0
 fi
 
