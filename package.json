@@ -1,19 +1,10 @@
 {
-    "name": "@pcrab/crim",
+    "name": "@pcrab/solidjs-ts-template",
     "version": "1.0.0",
-    "description": "A simple node git repo template",
-    "main": "dist/index.cjs",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
-    "exports": {
-        ".": {
-            "require": "./dist/index.cjs",
-            "import": "./dist/index.mjs",
-            "types": "./dist/index.d.ts"
-        }
-    },
+    "description": "A simple soldjs git repo template",
     "scripts": {
-        "build": "ts-node esbuild.ts",
+        "build": "vite build",
+        "dev": "vite serve",
         "commit": "git-cz",
         "lint": "eslint \"src/**/*.{ts, tsx}\"",
         "preinstall": "npx only-allow pnpm",
@@ -22,8 +13,7 @@
     },
     "keywords": [
         "template",
-        "typescript",
-        "esbuild"
+        "typescript"
     ],
     "author": {
         "name": "Pcrab",
@@ -45,19 +35,27 @@
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
+        "autoprefixer": "^10.4.13",
         "commitizen": "^4.3.0",
-        "esbuild": "^0.17.6",
-        "eslint": "^8.33.0",
+        "eslint": "^8.34.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-jest": "^27.2.1",
         "eslint-plugin-prettier": "^4.2.1",
         "husky": "^8.0.3",
         "jest": "^29.4.2",
+        "jest-environment-jsdom": "^29.4.2",
+        "postcss": "^8.4.21",
         "prettier": "^2.8.4",
         "rimraf": "^4.1.2",
         "ts-jest": "^29.0.5",
         "ts-node": "^10.9.1",
-        "typescript": "^4.9.5"
+        "typescript": "^4.9.5",
+        "vite": "^4.1.1",
+        "vite-plugin-solid": "^2.5.0"
+    },
+    "dependencies": {
+        "@solidjs/router": "^0.7.0",
+        "solid-js": "^1.6.10"
     }
 }
